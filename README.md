@@ -12,28 +12,24 @@ The series is structured across **4 progressive architectural layers** and **12 
 
 ```mermaid
 flowchart TB
-    subgraph L4["Layer 4: Production Engineering & Scaling"]
-        E09["09 · Observability & Distributed Tracing"]
-        E10["10 · Evaluation (Evals) Pipeline Design"]
-        E11["11 · AI Security, Guardrails & Tool Sandboxing"]
-        E12["12 · Latency & Cost Optimization"]
-    end
-
-    subgraph L3["Layer 3: Control Flow & Orchestration"]
-        E06["06 · Control Flow Patterns: Workflows vs. ReAct"]
-        E07["07 · State Machines & Graph-Based Orchestration"]
-        E08["08 · Multi-Agent Topologies"]
+    subgraph L1["Layer 1: Core Interface & Determinism"]
+        direction LR
+        E01["01 · Structured Outputs & Schema Enforcement"] ~~~ E02["02 · Function / Tool Calling & Execution Loop"] ~~~ E03["03 · Context Engineering & Memory Architecture"]
     end
 
     subgraph L2["Layer 2: Data & External World Integration"]
-        E04["04 · Production RAG Pipeline"]
-        E05["05 · MCP (Model Context Protocol) Architecture"]
+        direction LR
+        E04["04 · Production RAG Pipeline"] ~~~ E05["05 · MCP (Model Context Protocol) Architecture"]
     end
 
-    subgraph L1["Layer 1: Core Interface & Determinism"]
-        E01["01 · Structured Outputs & Schema Enforcement"]
-        E02["02 · Function / Tool Calling & Execution Loop"]
-        E03["03 · Context Engineering & Memory Architecture"]
+    subgraph L3["Layer 3: Control Flow & Orchestration"]
+        direction LR
+        E06["06 · Control Flow Patterns: Workflows vs. ReAct"] ~~~ E07["07 · State Machines & Graph-Based Orchestration"] ~~~ E08["08 · Multi-Agent Topologies"]
+    end
+
+    subgraph L4["Layer 4: Production Engineering & Scaling"]
+        direction LR
+        E09["09 · Observability & Distributed Tracing"] ~~~ E10["10 · Evaluation (Evals) Pipeline Design"] ~~~ E11["11 · AI Security, Guardrails & Tool Sandboxing"] ~~~ E12["12 · Latency & Cost Optimization"]
     end
 
     L1 --> L2 --> L3 --> L4
