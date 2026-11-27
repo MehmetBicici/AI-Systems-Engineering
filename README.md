@@ -136,7 +136,6 @@ AI-Systems-Engineering/
 ├── 10-evaluation-pipeline-design/
 ├── 11-ai-security-guardrails-and-sandboxing/
 ├── 12-latency-and-cost-optimization/
-├── .env.example          # Template for API keys & observability endpoints
 ├── .gitignore            # Configured for Python, secrets, vector DBs & traces
 ├── requirements.txt      # Shared base Python dependencies
 └── README.md
@@ -166,10 +165,12 @@ pip install -r requirements.txt
 
 ### 3. Configure Environment Variables
 
-Copy the example environment file and populate the required API keys:
+Create a `.env` file at the repository root and add the API keys required for the episode you are running:
 
-```bash
-cp .env.example .env
+```dotenv
+OPENAI_API_KEY=your_api_key_here
+ANTHROPIC_API_KEY=your_api_key_here
+GEMINI_API_KEY=your_api_key_here
 ```
 
 `python-dotenv` automatically discovers the root `.env` file when you execute scripts from inside any episode folder, so you only need to maintain your keys in one place—and `.gitignore` ensures `.env` and secret files are never committed.
