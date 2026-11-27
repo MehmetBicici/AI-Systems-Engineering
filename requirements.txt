@@ -1,0 +1,26 @@
+# ==============================================================================
+# AI Systems Engineering — Shared Base Dependencies
+#
+# Install base packages from the repository root:
+#   pip install -r requirements.txt
+#
+# Episode-specific dependencies (vector stores, MCP SDKs, graph frameworks,
+# tracing exporters, etc.) are managed inside each episode's subdirectory or
+# added incrementally as the series progresses.
+# ==============================================================================
+
+# Environment & configuration
+python-dotenv>=1.0.1
+
+# Schema validation & structured data
+pydantic>=2.9.0
+
+# HTTP client & terminal formatting
+httpx>=0.27.0
+rich>=13.9.0
+
+# Uncomment the LLM provider SDK(s) you use:
+# openai>=1.50.0
+# anthropic>=0.39.0
+# google-genai>=1.0.0
+
